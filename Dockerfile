@@ -24,8 +24,8 @@ ENV SPREAD_HOME=/opt/spread-bin-4.0.0
 ENV PATH=$SPREAD_HOME/bin/i686-pc-linux-gnu:$PATH
 
 # Copy and configure spread.conf
-COPY conf/spread.conf /usr/local/bin/spread.conf
-RUN chown spread:spread /usr/local/bin/spread.conf
+COPY conf/spread.conf /etc/spread/spread.conf
+RUN chown spread:spread /etc/spread/spread.conf
 
 # Expose Spread default port
 EXPOSE 4803
@@ -33,4 +33,4 @@ EXPOSE 4803
 # Run Spread as the 'spread' user by default
 USER spread
 
-ENTRYPOINT [ "spread", "-c", "/usr/local/bin/spread.conf" ]
+ENTRYPOINT [ "spread", "-c", "/etc/spread/spread.conf" ]
