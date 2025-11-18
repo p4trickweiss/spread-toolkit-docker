@@ -1,6 +1,9 @@
 # Build stage
 FROM debian:bullseye-slim AS builder
 
+ARG TARGETARCH
+ARG TARGETPLATFORM
+
 RUN apt-get update && \
     apt-get install -y \
     build-essential \
