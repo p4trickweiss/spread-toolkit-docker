@@ -11,8 +11,6 @@ RUN apt-get update && \
     automake \
     libtool \
     tar \
-    g++-aarch64-linux-gnu \
-    binutils-aarch64-linux-gnu \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /build
@@ -29,7 +27,6 @@ RUN cd spread-src-4.0.0 && \
     else \
     echo "Unknown TARGETARCH: $TARGETARCH" && exit 1; \
     fi && \
-    echo "BUILD_TYPE=$BUILD_TYPE" && \
     ./configure --build=$BUILD_TYPE --prefix=/spread && \
     make CFLAGS="-fcommon" && \
     make install
