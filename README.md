@@ -46,7 +46,7 @@ services:
     ports:
       - 4803:4803
     volumes:
-      - conf/spread.conf:/etc/spread/spread.conf:ro
+      - conf/spread.conf:/spread/etc/spread.conf:ro
     networks:
       spreadnet:
         ipv4_address: 172.18.0.2
