@@ -11,7 +11,7 @@ env:
   IMAGE_TAG: 4.0.0
 
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -23,6 +23,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
 
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
