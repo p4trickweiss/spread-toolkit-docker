@@ -16,9 +16,9 @@ COPY spread-src-4.0.0 /build/spread-src-4.0.0
 
 # Build and install to /spread
 RUN cd spread-src-4.0.0 && \
-    if [ "$(uname -m)" = "x86_64" ]; then \
+    if [ "$TARGETARCH" = "amd64" ]; then \
     BUILD_TYPE="x86_64-pc-linux-gnu"; \
-    elif [ "$(uname -m)" = "aarch64" ]; then \
+    elif [ "$TARGETARCH" = "arm64" ]; then \
     BUILD_TYPE="aarch64-unknown-linux-gnu"; \
     else \
     BUILD_TYPE="$(uname -m)-unknown-linux-gnu"; \
