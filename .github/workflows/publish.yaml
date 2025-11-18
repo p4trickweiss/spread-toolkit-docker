@@ -7,7 +7,7 @@ on:
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
-  IMAGE_NAME: p4trickweiss/spread-toolkit
+  IMAGE_NAME: ${{ github.repository_owner }}/spread-toolkit
   IMAGE_TAG: 4.0.0
 
 jobs:
