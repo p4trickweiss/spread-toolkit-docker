@@ -11,6 +11,8 @@ RUN apt-get update && \
     automake \
     libtool \
     tar \
+    g++-aarch64-linux-gnu \
+    binutils-aarch64-linux-gnu \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /build
