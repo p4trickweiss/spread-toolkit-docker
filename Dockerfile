@@ -23,8 +23,6 @@ RUN cd spread-src-4.0.0 && \
     BUILD_TYPE="x86_64-pc-linux-gnu"; \
     elif [ "$TARGETARCH" = "arm64" ]; then \
     BUILD_TYPE="aarch64-unknown-linux-gnu"; \
-    else \
-    BUILD_TYPE="$(uname -m)-unknown-linux-gnu"; \
     fi && \
     ./configure --build=$BUILD_TYPE --prefix=/spread && \
     make CFLAGS="-fcommon" && \
