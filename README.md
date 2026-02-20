@@ -58,3 +58,9 @@ networks:
       config:
         - subnet: 172.18.0.0/16
 ```
+
+## Acknowledgment
+
+This product uses software developed by Spread Concepts LLC
+for use in the Spread toolkit. For more information about Spread,
+see [http://www.spread.org](http://www.spread.org).
